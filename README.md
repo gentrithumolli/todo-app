@@ -24,13 +24,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Installation
 
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-   ```
-
+1. **Clone the Repository**
 2. **Install Dependencies**:
    ```bash
    npm install
@@ -67,4 +61,14 @@ To create production builds of your app:
    expo build:ios
    ```
 
-Follow the instructions provided by Expo to download your builds.
+## After starting app
+
+## Starting local server
+
+To start local server, you can use the `npm run start:server` command.
+
+### Logging in
+
+For logging in you can use a static user I've created for testing purpose,  
+`username: gentrit`  
+`password: test123`
