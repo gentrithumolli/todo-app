@@ -7,6 +7,7 @@ import { useUpdateTaskMutation } from "@/src/api/tasks/tasks.mutation";
 import Toast from "react-native-toast-message";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "expo-router";
+import queryKeys from "@/src/api/queryKeys";
 
 interface Props {
   id?: string;
@@ -26,11 +27,17 @@ export const EditTaskForm = (props: Props) => {
   const { mutateAsync } = useUpdateTaskMutation(props.id ?? "");
 
   const handleEditSubmit = async (values: TaskFormFields) => {
+    if (!props.id) {
+      return;
+    }
+
     try {
       await mutateAsync(values);
       Toast.show({ type: "success", text1: "Task edited successfully" });
-      queryClient.invalidateQueries({ refetchType: "all" });
-      router.navigate("/");
+      queryClient.invalidateQueries({
+        queryKey: queryKeys.getTaskById(props.id),
+      });
+      router.navigate(`/tasks/${props.id}`);
     } catch (e) {
       Toast.show({ type: "error", text1: "Error, please try again" });
     }

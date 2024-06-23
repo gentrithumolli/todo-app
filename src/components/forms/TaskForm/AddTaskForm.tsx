@@ -7,6 +7,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { TaskFormFields } from "@/src/lib/forms/task";
 import { useCreateTaskMutation } from "@/src/api/tasks/tasks.mutation";
 import { TaskForm } from "./TaskForm";
+import queryKeys from "@/src/api/queryKeys";
 
 /**
  * Abstraction layer of TaskForm component that creates a new task on DB.
@@ -24,7 +25,10 @@ export const AddTaskForm = () => {
     try {
       await mutateAsync(values);
       Toast.show({ type: "success", text1: "Task created successfully" });
-      queryClient.invalidateQueries({ refetchType: "all" });
+      queryClient.invalidateQueries({
+        queryKey: queryKeys.getTasks(),
+        refetchType: "all",
+      });
       router.navigate("/");
     } catch (e) {
       Toast.show({ type: "error", text1: "Error, please try again" });
