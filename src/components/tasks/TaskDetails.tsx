@@ -10,11 +10,6 @@ interface Props {
 export const TaskDetails = (props: Props) => {
   const { data } = props;
 
-  const tagsAsArray = data.tags
-    ?.split(",")
-    .map((tag) => tag.trim())
-    .filter((tag) => !!tag);
-
   return (
     <View style={styles.root}>
       <DetailItem label="Title" value={data.title} />
@@ -22,16 +17,7 @@ export const TaskDetails = (props: Props) => {
       <DetailItem label="Planned date" value={data.planned_date} />
       <DetailItem label="Status" value={data.status} />
       <DetailItem label="Priority" value={data.priority} />
-      <DetailItem
-        label="Tags"
-        value={
-          <View style={styles.tags}>
-            {tagsAsArray?.map((tag) => (
-              <Pill>{tag}</Pill>
-            ))}
-          </View>
-        }
-      />
+      <DetailItem label="Tags" value={<TaskTags tags={data.tags} />} />
     </View>
   );
 };
@@ -40,6 +26,9 @@ interface DetailItemProps {
   label: string;
   value?: string | React.ReactNode;
 }
+/**
+ * Task detail granular component that renders label and value
+ */
 const DetailItem = (props: DetailItemProps) => {
   return (
     <View>
@@ -47,6 +36,28 @@ const DetailItem = (props: DetailItemProps) => {
       <Text style={styles.fieldValue}>
         {props.value ? props.value : "Not set"}
       </Text>
+    </View>
+  );
+};
+
+interface TaskTagsProps {
+  tags?: string;
+}
+
+/**
+ * Component that accepts tags as string and renders them into pills
+ */
+const TaskTags = (props: TaskTagsProps) => {
+  const tagsAsArray = props.tags
+    ?.split(",") //split by comma
+    .map((tag) => tag.trim()) // remove whitespaces
+    .filter((tag) => !!tag); //and empty leftover tags
+
+  return (
+    <View style={styles.tags}>
+      {tagsAsArray?.map((tag, idx) => <Pill key={tag + idx}>{tag}</Pill>) ?? (
+        <Text style={styles.fieldValue}>Not set</Text>
+      )}
     </View>
   );
 };
