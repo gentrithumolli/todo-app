@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+# ToDo app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a React Native application built using Expo. It is designed to provide a seamless and responsive experience across both iOS and Android platforms.
 
-## Get started
+## Table of Contents
 
-1. Install dependencies
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Building the App](#building-the-app)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js**: Make sure you have Node.js installed. You can download it from [here](https://nodejs.org/).
+- **Expo CLI**: Install Expo CLI by running `npm install -g expo-cli`.
+- **XCode Studio**: If you want to run it on iOS simulator, install XCODE using `npm install -g expo-cli`.
+- **Watchman**: Watchman is a tool for watching changes in the filesystem. Installing it will result in better performance. You can install it with: `brew update && brew install watchman`.
+- **Git**: Version control system to clone the repository. You can download it from mac App Store.
+
+## Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+   ```
+
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
 
-2. Start the app
+## Running the App
+
+To run the app in development mode:
+
+1. **Start the Expo Development Server**:
 
    ```bash
-    npx expo start
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+2. **Open the App**:
+   - Use the Expo Go app on your Android or iOS device to scan the QR code from the terminal or the Expo DevTools in your browser.
+   - Alternatively, you can run the app on an emulator:
+     - For iOS: Press `i` to start the app in an iOS simulator (Mac only).
+     - For Android: Press `a` to start the app in an Android emulator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Building the App
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+To create production builds of your app:
 
-## Get a fresh project
+1. **Build for Android**:
 
-When you're ready, run:
+   ```bash
+   expo build:android
+   ```
 
-```bash
-npm run reset-project
-```
+2. **Build for iOS**:
+   ```bash
+   expo build:ios
+   ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Follow the instructions provided by Expo to download your builds.
