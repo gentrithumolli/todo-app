@@ -34,13 +34,20 @@ Before you begin, ensure you have met the following requirements:
 
 To run the app in development mode:
 
-1. **Start the Expo Development Server**:
+1. **Install expo requirements**:
 
    ```bash
-   expo start
+     npm install expo
+     npx expo install expo-dev-client
    ```
 
-2. **Open the App**:
+2. **Start the Expo Development Server**:
+
+   ```bash
+   npm start
+   ```
+
+3. **Open the App**:
    - Use the Expo Go app on your Android or iOS device to scan the QR code from the terminal or the Expo DevTools in your browser.
    - Alternatively, you can run the app on an emulator:
      - For iOS: Press `i` to start the app in an iOS simulator (Mac only).
