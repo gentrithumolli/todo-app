@@ -17,7 +17,7 @@ This is a React Native application built using Expo. It is designed to provide a
 Before you begin, ensure you have met the following requirements:
 
 - **Node.js**: Make sure you have Node.js installed. You can download it from [here](https://nodejs.org/).
-- **Expo CLI**: Install Expo CLI by running `npm install -g expo-cli`.
+- **Expo CLI**: Install Expo CLI by running `npm i expo`.
 - **XCode Studio**: If you want to run it on iOS simulator, install XCODE using `npm install -g expo-cli`.
 - **Watchman**: Watchman is a tool for watching changes in the filesystem. Installing it will result in better performance. You can install it with: `brew update && brew install watchman`.
 - **Git**: Version control system to clone the repository. You can download it from mac App Store.
@@ -37,7 +37,6 @@ To run the app in development mode:
 1. **Install expo requirements**:
 
    ```bash
-     npm install expo
      npx expo install expo-dev-client
    ```
 
